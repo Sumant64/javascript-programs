@@ -7,12 +7,17 @@ This function should mimic the functionality of Math.pow()  - do not worry about
 // power(2,2) // 4
 // power(2,4) // 16
 
-function power(base, exponent) {
-    if(exponent === 0){
+function power(a, b){
+    if(b === 0){
         return 1;
     }
-    return base * power(base, exponent-1);
+    let total = a;
+    for(let i = 1; i < b; i++) {
+        total *= a;
+    }
+    return total;
+    
 }
 
-let res = power(3, 2);
-console.log(res)
+let p = power (2, 2);
+console.log(p);

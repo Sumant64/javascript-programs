@@ -7,12 +7,13 @@ Write a function called recursiveRange which accepts a number and adds up all
 // recursiveRange(6) // 21
 // recursiveRange(10) // 55
 
-function recursiveRange(x) {
-    if(x === 0){
-        return 0;
+function recursiveRange(num){
+    let sum = 0;
+    for(let i = 1; i <= num; i++){
+        sum += i;
     }
-    return x + recursiveRange(x-1);
-}
-
-let res = recursiveRange(5);
-console.log(res);
+    return sum;
+ }
+ 
+ let sum = recursiveRange(5);
+ console.log(sum);

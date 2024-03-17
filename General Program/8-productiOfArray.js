@@ -5,13 +5,14 @@ Write a function called productOfArray which takes in an array of numbers and re
 // productOfArray([1,2,3]) // 6
 // productOfArray([1,2,3,10]) // 60
 
+
 function productOfArray(arr) {
-    if(arr.length === 0) {
-        return 1;
+    let total = 1;
+    for(let i = 0; i< arr.length ; i++){
+        console.log(arr[i]);
+        total *= arr[i];
     }
-    return arr[0] * productOfArray(arr.slice(1));
+    return total;
 }
 
-let res = productOfArray([1,2,3,10])
-console.log(res);
-
+productOfArray([1,2,3])
