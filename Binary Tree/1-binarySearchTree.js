@@ -1,5 +1,5 @@
 class Node {
-    constructor() {
+    constructor(value) {
         this.value = value;
         this.left = null;
         this.right = null;
@@ -71,6 +71,22 @@ class BinarySearchTree {
         }
         return false;
     }
+
+    // Breadth first Tree traversel
+    BSF() {
+        let node = this.root;
+        let data = [];
+        let queue = [];
+        queue.push(node);
+
+        while(queue.length){
+            node = queue.shift();
+            data.push(node.value);
+            if(node.left) queue.push(node.left);
+            if(node.right) queue.push(node.right);
+        }
+        return data;
+    }
 }
 
 
@@ -78,11 +94,12 @@ class BinarySearchTree {
 //   5     13
 // 2  7  11  16
 
-var tree = new BinarySearchTree();
-tree.insert(10)
-tree.insert(5)
-tree.insert(13)
-tree.insert(11)
-tree.insert(2)
-tree.insert(16)
-tree.insert(7)
+var res = new BinarySearchTree();
+res.insert(10)
+res.insert(5)
+res.insert(13)
+res.insert(11)
+res.insert(2)
+res.insert(16)
+res.insert(7)
+res.BSF();
