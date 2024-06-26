@@ -1,0 +1,11 @@
+RoadMap to Learn DSA:
+---------------------
+
+=> Learn a programming language.
+=> Learn DSA basics and implement:
+    o Practise basics DSA with normal concept without using the inbuilt library.
+
+=> Learn language libraries that have DSA implemented for you (in 2-3 days) by applying them in question:
+    o Do not learn as a theory wise.. Google and apply in question, then slowly-slowly you will gain knowledge.
+
+=> Do Practise and learning together.
