@@ -9,6 +9,17 @@ which starts with 1 and 1, and where every number thereafter is equal to the sum
 // fib(28) // 317811
 // fib(35) // 9227465
 
+/*
+    if n = 4
+    fib(3) + fib(2) 
+    fib(2) == 1
+
+    fib(3) == fib(2) + fib(1) == 1 + 1 = 2
+
+    fib(3) + fib(2) = 3
+
+*/
+
 function fib(n) {
     if(n <= 2) {
         return 1;
