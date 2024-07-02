@@ -131,6 +131,20 @@ class SinglyLinkedList {
         return this;
     }
 
+    // 1-> 2 -> 3-> 4-> 5
+    //tail  <-1 <-2 <-3 <-4 <-5 head
+    /*
+        i = 0;
+        next = 2
+        node.next = null (1 -> null)
+        prev = node => prev = 1->
+        node = 2
+        --------------------------------------
+        i = 1
+        next = 3
+
+    */
+
     print() {
         let arr = [];
         let current = this.head;
