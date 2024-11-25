@@ -28,9 +28,9 @@ function secondFun (n) {
     if(n == 0) {
         return;
     }
-    fun(n - 1);
+    secondFun(n - 1);
     console.log(n);
-    fun(n - 1);
+    secondFun(n - 1);
 }
 
 secondFun(3);

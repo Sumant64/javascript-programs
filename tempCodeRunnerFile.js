@@ -1,1 +1,1 @@
-    console.log(strArr)
+[10, 20, 30]
