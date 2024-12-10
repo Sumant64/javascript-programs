@@ -1,5 +1,23 @@
 // selection sort
 
+/**
+ * 
+ * Similar to bubble sort, but instead of first placing large values
+ * into sorted position, it places small values into sorted position.
+ * 
+ * --> first loop
+ *      [5, 3, 4, 1, 2]   0
+ *       |  | 
+ *      [5, 3, 4, 1, 2]
+ *       |     |
+ *      [5, 3, 4, 1, 2]
+ *       |        |
+ *      [5, 3, 4, 1, 2]
+ *       |           |
+ *      
+ *      [1, 3, 4, 5, 2]
+ */
+
 function selectionSort(arr) {
     const swap = (arr, idx1, idx2) => {
         let temp = arr[idx1];

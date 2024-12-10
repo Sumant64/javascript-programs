@@ -1,1 +1,1 @@
-ad
+return -1
