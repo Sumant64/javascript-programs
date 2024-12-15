@@ -15,3 +15,34 @@
  * 
  */
 
+/**
+ * Idea for the solution:
+ * x0, x1, ..... xi....xj...x(n-1)
+ * 
+ * Consider every pair (xi, xj) such that
+ * a> j > i
+ * b> xj > xi
+ * 
+ * Profit with this pair considered is:
+ * (xj - xi) + maxProfit(0, i - 1) + maxProfit(j + 1, n - 1)
+ */
+
+function maxProfit(arr, b, e) { // b => beginning, e => end index
+    if(b >= e) return 0;
+    let res = 0;
+    for(let i = b; i < e; i++) {
+        for(let j = i + 1; j <= e; j++) {
+            if(arr[j] > arr[i]) {
+                let curr = (arr[j] - arr[i]) + maxProfit(arr, b, i - 1) + maxProfit(arr, j + 1, e);
+                res = Math.max(res, curr);
+            }
+        }
+    }
+    return res;
+}
+
+const res = maxProfit([10, 20, 30], 0, 2);
+console.log(res);
+
+
+
