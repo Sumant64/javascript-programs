@@ -63,7 +63,7 @@ function maxSum(arr) {
  * 
  */
 
-function maxSum(arr) {
+function maxSumEff(arr) {
     let res = arr[0];
     let maxEnding = arr[0];
     for(let i = 1; i < arr.length; i++) {
@@ -73,7 +73,7 @@ function maxSum(arr) {
     return res;
 }
 
-console.log(maxSum([5, 8, 3]))
+console.log(maxSumEff([5, 8, 3]))
 
 /**
  * Ex: [-3, 8, -2, 4]
