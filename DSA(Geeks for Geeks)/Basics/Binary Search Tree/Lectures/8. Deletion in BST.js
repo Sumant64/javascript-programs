@@ -37,5 +37,7 @@
  * Three ways to delete the nodes:
  * 1. From the leaf node.
  * 2. From the middle.
- * 3. Root node delete.
+ * 3. Root node delete. (replace the root node with the nearest largest value)
+ * 
+ * When we do the inorder traversal, then we will get the nearest node
  */
