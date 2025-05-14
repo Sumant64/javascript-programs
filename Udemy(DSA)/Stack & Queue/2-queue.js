@@ -5,6 +5,15 @@ class Node {
     }
 }
 
+/**
+ *    Queue
+ *     4 --> last
+ *     5
+ *     6
+ *     7
+ *     8 --> first
+ */
+
 class Queue {
     constructor() {
         this.first = null;
