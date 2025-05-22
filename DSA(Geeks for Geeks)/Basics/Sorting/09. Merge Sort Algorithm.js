@@ -1,5 +1,10 @@
 // Merge Sort Algorithm:
 
+/**
+ * Time Complexity: theta(n log n)
+ * Space Complexity: theta(n)
+ */
+
 // Merge function from earlier
 function merge(arr1, arr2) {
     let results = [];
