@@ -47,4 +47,7 @@
  *  o left(1) = 3
  *    right(1) = 4 --> 50
  *    parent(5) = 2 --> 30
+ * 
+ * o The bottom right most element of the binary tree i.e. 60 will always be the last index in array representation.
+ * 
  */
