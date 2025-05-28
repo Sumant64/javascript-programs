@@ -5,6 +5,8 @@
  * 2. Move slow by one and fast by two until we either reach null
  * or these two meet.
  * 
+ * o Time Complexity: O(m) + O(n) ==> O(length of linked list)
+ * 
  * 
  * o Ex: 10 --> 12 --> 15 --> 20 --> 25
  *              |                    |
