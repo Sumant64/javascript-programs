@@ -75,6 +75,8 @@ printNthEnd(head, 2)
  * o Start 'second' pointer from head.
  * o Move both 'first' and 'second' at same speed. When 'first' 
  * reaches NULL, second reaches the required node.
+ * o Time complexity: Theta(len)
+ * o Space: theta(1)
  */
 
 
