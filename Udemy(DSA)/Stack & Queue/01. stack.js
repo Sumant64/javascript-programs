@@ -1,56 +1,76 @@
+// Javascript program to implement a stack using singly
+
 class Node {
-    constructor(value) {
-        this.value = value;
+    constructor(new_data) {
+        this.data = new_data;
         this.next = null;
     }
 }
 
-/**
- *    Stack
- *    4 --> first
- *    5   
- *    6
- *    7
- *    8 --> last
- */
 
 class Stack {
-    constructor() {
-        this.first = null;
-        this.last = null;
-        this.size = 0;
+    constructor() { 
+        this.head = null; 
     }
 
-    push(val) {
-        let newNode = new Node(val);
-        if(!this.first) {
-            this.first = newNode;
-            this.last = newNode;
-        } else {
-            let temp = this.first;
-            this.first = newNode;
-            this.first.next = temp;
+    // Function to check if the stack is empty
+    isEmpty() {    
+        // If head is null, the stack is empty
+        return this.head === null;
+    }
+
+
+    push(new_data) {
+        const new_node = new Node(new_data);
+
+        if (!new_node) {
+            console.log("\nStack Overflow");
+            return;
         }
-        return this.size++;
+
+        new_node.next = this.head;
+        this.head = new_node;
     }
 
+    // Function to remove the top element from the stack
     pop() {
-        if(!this.first) return null;
-        let temp = this.first;
-        if(this.first === this.last) {
-            this.last = null;
+        if (this.isEmpty()) {
+            console.log("\nStack Underflow");
         }
-        this.first = this.first.next;
-        this.size--;
-        return temp.value;
+        else {
+            let temp = this.head;
+            this.head = this.head.next;
+            temp = null;
+        }
+    }
+
+    // Function to return the top element of the stack
+    peek() {
+        if (!this.isEmpty())
+            return this.head.data;
+        else {
+            console.log("\nStack is empty");
+            return Number.MIN_VALUE;
+        }
     }
 }
 
-let stack = new Stack();
-stack.push(1);
-stack.push(2);
-stack.push(3);              
-stack.push(4);
-stack.push(5);
-stack.push(6);
-console.log(stack);
+// Driver program to test the stack implementation
+const st = new Stack();
+
+// Push elements onto the stack
+st.push(11);
+st.push(22);
+st.push(33);
+st.push(44);
+
+// Print top element of the stack
+console.log("Top element is " + st.peek());
+
+// removing two elemements from the top
+console.log("Removing two elements...");
+st.pop();
+st.pop();
+
+// Print top element of the stack
+console.log("Top element is " + st.peek());
