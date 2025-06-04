@@ -41,7 +41,7 @@ function sortedInsert (head, x) {
         return temp;
     }
     let curr = head;
-    while(curr.next !== null || curr.next.data < x) {
+    while(curr.next !== null && curr.next.data < x) {
         curr = curr.next;
     }
     temp.next = curr.next;
