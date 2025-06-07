@@ -1,4 +1,1 @@
-if(!swapflag) {
-        //     console.log('entered no swap')
-        //     return arr;
-        // }
+8,7, 5, 4, 1, 3
