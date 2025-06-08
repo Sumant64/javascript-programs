@@ -1,1 +1,1 @@
-8,7, 5, 4, 1, 3
+            console.log(arr);
