@@ -1,4 +1,4 @@
-// Pair with Given Sum
+// Pair with Given Sum in an unsorted array
 
 /**
  * I/P: arr[] = [3, 2, 8, 15, -8]
