@@ -34,7 +34,7 @@ class Graph {
         }
     }
 
-    DFSDisconnected() {
+    DFSDisconnectedCount() {
         let v = this.adj.length;
         let count = 0;
         let visited = new Array(v).fill(false);
@@ -57,5 +57,5 @@ obj.addEdge(3, 4);
 obj.addEdge(4, 5);
 
 // obj.printGraph();
-let count = obj.DFSDisconnected();
+let count = obj.DFSDisconnectedCount();
 console.log(count);
