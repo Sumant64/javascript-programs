@@ -1,4 +1,5 @@
-// Detect cycle in undirected graph
+// Detect cycle in directed graph using DFS
+
 
 class Graph {
     constructor(v) {
@@ -11,7 +12,7 @@ class Graph {
 
     addEdge(u, v) {
         this.adj[u].push(v);
-        this.adj[v].push(u);
+        // this.adj[v].push(u);
     }
 
     printGraph() {
@@ -21,30 +22,34 @@ class Graph {
         }
     }
 
-    DFSRec(s, parent, visited) {
+    DFSRec(s, visited, aSet) {
         visited[s] = true;
+        aSet[s] = true;
         let adj = this.adj;
         
         for(let i = 0; i < adj[s].length; i++) {
             let u = adj[s][i];
             if(visited[u] === false) {
-                if(this.DFSRec(u, s, visited)) {
+                if(this.DFSRec(u, visited, aSet)) {
                     return true;
                 }
-            } else if(u !== parent) {
+            } else if(aSet[u]) {
                 return true;
             }
         }
+        aSet[s] = false;
 
         return false;
     }
 
-    isCycle() {
+    isCycleDir() {
         let v = this.adj.length;
         let visited = new Array(v).fill(false);
+        let aSet = new Array(v).fill(false);
+
         for(let i = 0; i < v; i++) {
             if(!visited[i]) {
-                if(this.DFSRec(i, -1, visited)) {
+                if(this.DFSRec(i, visited, aSet)) {
                     return true;
                 }
             }
@@ -56,9 +61,10 @@ class Graph {
 
 let obj = new Graph(4);
 obj.addEdge(0, 1);
-obj.addEdge(0, 2);
-// obj.addEdge(1, 2);
+obj.addEdge(1, 2);
+// obj.addEdge(2, 3);
+// obj.addEdge(3, 1);
 
 
 // obj.printGraph();
-console.log(obj.isCycle());
+console.log(obj.isCycleDir());
