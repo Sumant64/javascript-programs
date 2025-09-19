@@ -51,3 +51,47 @@
  * o The bottom right most element of the binary tree i.e. 60 will always be the last index in array representation.
  * 
  */
+
+
+/**
+ * Min Heap:
+ * --------
+ * o Complete Binary Tree (Nodes are filled from left to right, or all the nodes are filled)
+ * o Every node has value smaller than its descendants
+ * 
+ * --> Example
+ * 
+ *                  10
+ *              20          15
+ *          30      40    18
+ * 
+ *      [10, 20, 15, 30, 40, 18]
+ * 
+ * --> Example
+ * 
+ *                          2
+ *                  4                8
+ *              6       5       9       10
+ *          100   200
+ * 
+ *      [2, 4, 8, 6, 5, 9, 10, 100, 200]
+ * 
+ * 
+ * 
+ * o Which of these is/are Min Heap?
+ * 
+ *          10
+ *      20      30    --> Not a complete binary tree
+ *            40
+ * 
+ * 
+ *              30
+ *          40      50 --> Complete binary tree but not a min Heap
+ *      15
+ * 
+ * 
+ *              30
+ *          40      50 --> Min Heap
+ *      44     100
+ * 
+ */
