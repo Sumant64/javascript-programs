@@ -51,11 +51,46 @@ function leftMost(s) {
     return -1;
 }
 
-console.log(leftMost("geeksforeeks"))
+// console.log(leftMost("geeksforeeks"))
 
 // =======================================================
 // Efficient Solution
 
 /**
+ * Efficient Solution:
+ * o Traverse the string from the last character.
+ * o Keep track of the visited characters.
+ * o If we see a visited character again, we set it as result.
+ * 
  * 
  */
+
+function leftMostEff(s) {
+    let visited = new Array(256).fill(false);
+    let res = -1;
+
+    for(let i = s.length - 1; i >= 0; i--) {
+        if(visited[s.charCodeAt(i)]) {
+            res = i;
+        }
+        visited[s.charCodeAt(i)] = true;   
+    }
+    return res;
+}
+
+// console.log(leftMostEff("geeksforeeks"))
+
+// ==========================
+function leftMostAnother(s) {
+    let visited = new Array(256).fill(false);
+
+    for(let i = 0; i < s.length - 1; i++) {
+        if(visited[s.charCodeAt(i)]) {
+            return s.indexOf(s[i]);
+        }
+        visited[s.charCodeAt(i)] = true;
+    }
+    return -1;
+}
+
+console.log(leftMostAnother("geeksforeeks"))
