@@ -84,7 +84,7 @@ function leftMostEff(s) {
 function leftMostAnother(s) {
     let visited = new Array(256).fill(false);
 
-    for(let i = 0; i < s.length - 1; i++) {
+    for(let i = 0; i < s.length; i++) {
         if(visited[s.charCodeAt(i)]) {
             return s.indexOf(s[i]);
         }
