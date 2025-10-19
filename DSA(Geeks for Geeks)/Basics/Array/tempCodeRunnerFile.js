@@ -1,0 +1,1 @@
+mid === arr.length - 1

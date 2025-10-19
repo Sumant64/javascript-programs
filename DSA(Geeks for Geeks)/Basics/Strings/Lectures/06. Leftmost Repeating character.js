@@ -79,18 +79,3 @@ function leftMostEff(s) {
 }
 
 // console.log(leftMostEff("geeksforeeks"))
-
-// ==========================
-function leftMostAnother(s) {
-    let visited = new Array(256).fill(false);
-
-    for(let i = 0; i < s.length; i++) {
-        if(visited[s.charCodeAt(i)]) {
-            return s.indexOf(s[i]);
-        }
-        visited[s.charCodeAt(i)] = true;
-    }
-    return -1;
-}
-
-console.log(leftMostAnother("geeksforeeks"))
