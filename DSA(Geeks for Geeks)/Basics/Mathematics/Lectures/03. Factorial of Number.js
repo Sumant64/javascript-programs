@@ -23,7 +23,7 @@ function fact(n) {
     return res;
 }
 
-console.log(fact(5))
+// console.log(fact(5))
 
 //====================================
 // Recursive solution
@@ -39,7 +39,7 @@ function factRec(n) {
     return n * factRec(n - 1);
 }
 
-console.log(factRec(5))
+// console.log(factRec(5))
 
 /**
  * dry run
@@ -49,3 +49,41 @@ console.log(factRec(5))
  *              --> 2 * fact(1) == 2 * 1
  *                  --> 1 * fact(0) == 1
  */
+
+//================================================================
+// backtracking solution : memoization
+
+// let obj = {}
+
+// const fact = (num) => {
+//     if(num === 0) return 1;
+//     if(obj[num]) {
+//         return obj[num]
+//     } 
+    
+//     obj[num] = num * fact(num - 1);
+//     return obj[num];
+// }
+
+// console.log(fact(5));
+// console.log(fact(2));
+// console.log(obj);
+
+
+
+// solution 2: 
+function factorial(n, memo = {}) {
+  // Base cases
+  if (n === 0 || n === 1) return 1;
+
+  // Check if result is already in memo
+  if (memo[n]) return memo[n];
+
+  // Recursive call (backtracking)
+  memo[n] = n * factorial(n - 1, memo);
+
+  return memo[n];
+}
+
+console.log(factorial(5))
+console.log(factorial(3))
