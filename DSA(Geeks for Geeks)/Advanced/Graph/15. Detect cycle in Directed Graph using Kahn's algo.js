@@ -31,8 +31,6 @@ class Graph {
             }
         }
 
-
-
         let q = [];
 
         for (let u = 0; u < V; u++) {
@@ -43,8 +41,6 @@ class Graph {
 
         while (q.length > 0) {
             let u = q.shift();
-
-            console.log(u);
 
             for (let i = 0; i < adj[u].length; i++) {
                 let x = adj[u][i];
@@ -69,17 +65,13 @@ class Graph {
     }
 }
 
-const V = 5;
-const adj = new Graph(V);
-adj.addEdge(0, 1);
-adj.addEdge(1, 2);
-adj.addEdge(2, 3);
-adj.addEdge(3, 0);
-// adj.addEdge(0, 3);
-// adj.addEdge(1, 3);
-// adj.addEdge(1, 4);
-// adj.addEdge(2, 3);
 
-console.log("Following is a Topoological Sort of:");
+const V=5;
+const adj = new Graph(V);
+adj.addEdge(0,1);
+adj.addEdge(4,1);
+adj.addEdge(1,2);
+adj.addEdge(2,3);
+adj.addEdge(3,1);
 
 adj.topologicalSort(V);
