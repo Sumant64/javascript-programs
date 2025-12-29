@@ -1,71 +1,73 @@
 
 
-class Graph {
-    constructor(V) {
-        this.adj = [];
-        for (let i = 0; i < V; i++)
-            this.adj[i] = [];
-    }
-
-    addEdge(u, v) {
-        this.adj[u].push(v)
-    }
-
-    printGraph() {
-        let adj = this.adj;
-        for (let i = 0; i < adj.length; i++)
-            console.log(adj[i]);
-    }
-
-    topologicalSort(V) {
-        let adj = this.adj;
-        let in_degree = new Array(V).fill(0);
-
-        for (let u = 0; u < V; u++) {
-            for (let i = 0; i < adj[u].length; i++) {
-                let x = adj[u][i];
-
-                in_degree[x]++;
-            }
-        }
-
-
-
-        let q = [];
-
-        for (let u = 0; u < V; u++) {
-            if (in_degree[u] === 0) {
-                q.push(u);
-            }
-        }
-
-        while (q.length > 0) {
-            let u = q.shift();
-
-            console.log(u);
-
-            for (let i = 0; i < adj[u].length; i++) {
-                let x = adj[u][i];
-
-                in_degree[x]--;
-
-                if (in_degree[x] === 0) {
-                    q.push(x);
-                }
-            }
-        }
-
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
     }
 }
 
-const V = 5;
-const adj = new Graph(V);
-adj.addEdge(0, 2);
-adj.addEdge(0, 3);
-adj.addEdge(1, 3);
-adj.addEdge(1, 4);
-adj.addEdge(2, 3);
+class Queue {
+    constructor() {
+        this.first = null;
+        this.last = null;
+        this.size = 0;
+    }
 
-console.log("Following is a Topoological Sort of:");
+    enqueue(val) {
+        let newNode = new Node(val);
+        if(!this.first) {
+            this.first = newNode;
+            this.last = newNode;
+        } else {
+            this.last.next = newNode;
+            this.last = newNode;
+        }
+        return this.size++;
+    }
 
-adj.topologicalSort(V);
+    dequeue() {
+        if(!this.first) return null;
+
+        let temp = this.first;
+        if(this.first === this.last){
+            this.last = null;
+        }
+        this.first = this.first.next;
+        this.size--;
+        return temp.value;
+    }
+
+    isEmpty() {
+        if(this.size){
+            return false;
+        }else {
+            return true;
+        }
+    }
+}
+
+
+class TreeNode {
+    constructor(k) {
+        this.key = k;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+
+let root = new TreeNode(30);
+root.left = new TreeNode(40);
+root.right = new TreeNode(50);
+root.left.left = new TreeNode(70);
+root.right.left = new TreeNode(60);
+root.right.right = new TreeNode(80);
+
+const getSize = (root) => {
+    if(root === null) return 0;
+
+    return getSize(root.left) + getSize(root.right) + 1;
+}
+
+console.log(getSize(root));

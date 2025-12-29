@@ -1,1 +1,1 @@
-mid === arr.length - 1
+largestElemnent

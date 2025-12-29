@@ -1,39 +1,4 @@
-
-
-// class MyStack {
-
-//     constructor(c) {
-//         this.cap = c;
-//         this.arr = [];
-//         this.top = -1;
-//     }
-
-//     push(x) {
-//         if (this.top === this.cap - 1) { console.log("Stack is full"); return; }
-//         this.top++;
-//         this.arr[this.top] = x;
-//     }
-
-//     pop() {
-//         if (this.top === -1) { console.log("Stack is Empty"); return -1e9; }
-//         let res = this.arr[this.top];
-//         this.top--;
-//         return res;
-//     }
-
-//     peek() {
-//         if (this.top === -1) { console.log("Stack is Empty"); return -1e9; }
-//         return this.arr[this.top];
-//     }
-
-//     size() {
-//         return (this.top + 1);
-//     }
-
-//     isEmpty() {
-//         return (this.top === -1);
-//     }
-// }
+// Shortest Path in DAG (Directed Acyclic Graph)
 
 
 class AdjListNode {
