@@ -1,2 +1,1 @@
-l.index(4)
-# print(l.index(1))
+print(i)
