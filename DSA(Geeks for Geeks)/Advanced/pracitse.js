@@ -1,31 +1,31 @@
-// Longest Consecutive Subsequence in given array
+// Sliding Window Technique 
 
 /**
- * I/P: arr[] = [1, 9, 3, 4, 2, 20]
- * O/P: 4 ==> elements are 1, 2, 3, 4
+ * Ques> Find the maximum sum of k consecutive elements.
  * 
- * I/P: arr[] = [8, 20, 7, 30]
- * O/P: 2
+ * I/P: [1, 8, 30, -5, 20, 7]
+ *      k = 3
+ * O/P: 45
  * 
- * I/P: arr[] = [20, 30, 40]
- * O/P: 1
- */ 
+ * I/P: [5, -10, 6, 90, 3]
+ *      k = 2
+ * O/P: 96
+ */
 
-const findLargestEff = (arr) => {
-    let h = new Set(arr);
-    let res = 0;
+const slidingWindow = (arr, k) => {
+    let res = 0, currMax = 0;
 
-    for(let i = 0; i < arr.length; i++) {
-        if(h.has(arr[i] - 1) === false) {
-            let curr = 1;
-            while(h.has(arr[i] + curr)) {
-                curr++;
-            }
-            res = Math.max(res, curr);
-        }
+    for(let i = 0; i < k; i++) {
+        res += arr[i];
+        currMax += arr[i];
+    }
+
+    for(let i = k; i < arr.length; i++) {
+        currMax += (arr[i] - arr[i - k]);
+        res = Math.max(currMax, res);
     }
 
     return res;
 }
 
-console.log(findLargestEff([1, 9, 3, 4, 2, 20]))
+console.log(slidingWindow([1, 8, 30, -5, 20, 7], 3));
