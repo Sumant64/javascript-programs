@@ -77,7 +77,7 @@ function diameter(root) {
     return Math.max(d, diameter(root.left), diameter(root.right));
 }
 
-console.log(diameter(root));
+console.log(diameter(root)); // 5
 
 // ================================================
 // Better solution
@@ -118,4 +118,4 @@ function diameterEff(root) {
     return res;
 }
 
-console.log(diameterEff(root));
+console.log(diameterEff(root)); // 5

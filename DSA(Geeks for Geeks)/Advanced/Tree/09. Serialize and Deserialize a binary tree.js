@@ -121,7 +121,7 @@ function deserialize(arr) {
 }
 
 let newRoot = deserialize(serializeArr);
-console.log(newRoot)
+console.log(newRoot);
 
 /**
  * deserialize() : index = 0

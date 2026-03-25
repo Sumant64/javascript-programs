@@ -78,7 +78,7 @@ function findTwo(arr) {
 }
 
 // let arrInorder = inorder(root);
-// findTwo(arrInorder);
+// findTwo(arrInorder); // ans 60, 8
 
 // =====================================================
 // Efficient Solution

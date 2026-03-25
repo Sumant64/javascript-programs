@@ -123,7 +123,7 @@ function printLeftView(root) {
     }
 }
 
-// printLeftView(root);
+// printLeftView(root); // 30, 40, 70
 // console.log(root);
 
 // =================================================

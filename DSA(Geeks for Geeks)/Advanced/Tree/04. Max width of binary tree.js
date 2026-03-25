@@ -118,4 +118,4 @@ function maxWidth(root) {
     return res;
 }
 
-console.log(maxWidth(root));
+console.log(maxWidth(root)); // 4 ans
